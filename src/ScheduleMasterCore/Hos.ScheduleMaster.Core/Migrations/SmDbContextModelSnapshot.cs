@@ -139,8 +139,14 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
+                    b.Property<double>("ElapsedTime")
+                        .HasColumnType("double");
+
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Node")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Result")
                         .HasColumnType("int");
@@ -151,9 +157,6 @@ namespace Hos.ScheduleMaster.Core.Migrations
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<double>("TimeSpan")
-                        .HasColumnType("double");
-
                     b.HasKey("TraceId");
 
                     b.ToTable("ScheduleTraces");
@@ -163,6 +166,12 @@ namespace Hos.ScheduleMaster.Core.Migrations
                 {
                     b.Property<string>("NodeName")
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("AccessProtocol")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("AccessSecret")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Host")
                         .IsRequired()
@@ -229,7 +238,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_SmtpServer",
-                            CreateTime = new DateTime(2019, 11, 26, 16, 52, 4, 928, DateTimeKind.Local).AddTicks(5233),
+                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 939, DateTimeKind.Local).AddTicks(136),
                             Group = "Email",
                             IsReuired = true,
                             Name = "邮件服务器",
@@ -240,7 +249,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_SmtpPort",
-                            CreateTime = new DateTime(2019, 11, 26, 16, 52, 4, 928, DateTimeKind.Local).AddTicks(8775),
+                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 939, DateTimeKind.Local).AddTicks(3492),
                             Group = "Email",
                             IsReuired = true,
                             Name = "邮件服务器端口",
@@ -251,7 +260,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_FromAccount",
-                            CreateTime = new DateTime(2019, 11, 26, 16, 52, 4, 928, DateTimeKind.Local).AddTicks(8850),
+                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 939, DateTimeKind.Local).AddTicks(3558),
                             Group = "Email",
                             IsReuired = true,
                             Name = "发件人账号",
@@ -262,7 +271,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_FromAccountPwd",
-                            CreateTime = new DateTime(2019, 11, 26, 16, 52, 4, 928, DateTimeKind.Local).AddTicks(8852),
+                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 939, DateTimeKind.Local).AddTicks(3560),
                             Group = "Email",
                             IsReuired = true,
                             Name = "发件人账号密码",
@@ -288,7 +297,10 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<Guid>("ScheduleId")
+                    b.Property<string>("Node")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<Guid?>("ScheduleId")
                         .HasColumnType("char(36)");
 
                     b.Property<string>("StackTrace")
@@ -345,7 +357,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Id = 1,
-                            CreateTime = new DateTime(2019, 11, 26, 16, 52, 4, 920, DateTimeKind.Local).AddTicks(4991),
+                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 933, DateTimeKind.Local).AddTicks(812),
                             Password = "96e79218965eb72c92a549dd5a330112",
                             RealName = "admin",
                             Status = 1,
