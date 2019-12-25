@@ -63,7 +63,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         .HasColumnType("varchar(500) CHARACTER SET utf8mb4")
                         .HasMaxLength(500);
 
-                    b.Property<bool>("RunMoreTimes")
+                    b.Property<bool>("RunLoop")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime?>("StartDate")
@@ -168,6 +168,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.Property<string>("AccessProtocol")
+                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("AccessSecret")
@@ -179,6 +180,13 @@ namespace Hos.ScheduleMaster.Core.Migrations
 
                     b.Property<DateTime?>("LastUpdateTime")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("MachineName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("NodeType")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Priority")
                         .HasColumnType("int");
@@ -238,7 +246,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_SmtpServer",
-                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 939, DateTimeKind.Local).AddTicks(136),
+                            CreateTime = new DateTime(2019, 12, 25, 16, 44, 13, 846, DateTimeKind.Local).AddTicks(1427),
                             Group = "Email",
                             IsReuired = true,
                             Name = "邮件服务器",
@@ -249,7 +257,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_SmtpPort",
-                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 939, DateTimeKind.Local).AddTicks(3492),
+                            CreateTime = new DateTime(2019, 12, 25, 16, 44, 13, 846, DateTimeKind.Local).AddTicks(3196),
                             Group = "Email",
                             IsReuired = true,
                             Name = "邮件服务器端口",
@@ -260,7 +268,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_FromAccount",
-                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 939, DateTimeKind.Local).AddTicks(3558),
+                            CreateTime = new DateTime(2019, 12, 25, 16, 44, 13, 846, DateTimeKind.Local).AddTicks(3252),
                             Group = "Email",
                             IsReuired = true,
                             Name = "发件人账号",
@@ -271,7 +279,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_FromAccountPwd",
-                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 939, DateTimeKind.Local).AddTicks(3560),
+                            CreateTime = new DateTime(2019, 12, 25, 16, 44, 13, 846, DateTimeKind.Local).AddTicks(3254),
                             Group = "Email",
                             IsReuired = true,
                             Name = "发件人账号密码",
@@ -357,7 +365,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Id = 1,
-                            CreateTime = new DateTime(2019, 11, 29, 16, 42, 7, 933, DateTimeKind.Local).AddTicks(812),
+                            CreateTime = new DateTime(2019, 12, 25, 16, 44, 13, 841, DateTimeKind.Local).AddTicks(1275),
                             Password = "96e79218965eb72c92a549dd5a330112",
                             RealName = "admin",
                             Status = 1,
