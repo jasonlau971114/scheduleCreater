@@ -92,8 +92,8 @@ namespace Hos.ScheduleMaster.Core.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnName("title")
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
-                        .HasMaxLength(50);
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<int>("TotalRunCount")
                         .HasColumnName("totalruncount")
@@ -117,7 +117,8 @@ namespace Hos.ScheduleMaster.Core.Migrations
 
                     b.Property<string>("WorkerName")
                         .HasColumnName("workername")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -191,7 +192,8 @@ namespace Hos.ScheduleMaster.Core.Migrations
 
                     b.Property<string>("LockedNode")
                         .HasColumnName("lockednode")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<DateTime?>("LockedTime")
                         .HasColumnName("lockedtime")
@@ -243,7 +245,8 @@ namespace Hos.ScheduleMaster.Core.Migrations
 
                     b.Property<string>("Node")
                         .HasColumnName("node")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<int>("Result")
                         .HasColumnName("result")
@@ -271,16 +274,19 @@ namespace Hos.ScheduleMaster.Core.Migrations
                     b.Property<string>("AccessProtocol")
                         .IsRequired()
                         .HasColumnName("accessprotocol")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
+                        .HasMaxLength(20);
 
                     b.Property<string>("AccessSecret")
                         .HasColumnName("accesssecret")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Host")
                         .IsRequired()
                         .HasColumnName("host")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<DateTime?>("LastUpdateTime")
                         .HasColumnName("lastupdatetime")
@@ -288,12 +294,14 @@ namespace Hos.ScheduleMaster.Core.Migrations
 
                     b.Property<string>("MachineName")
                         .HasColumnName("machinename")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<string>("NodeType")
                         .IsRequired()
                         .HasColumnName("nodetype")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
+                        .HasMaxLength(20);
 
                     b.Property<int>("Priority")
                         .HasColumnName("priority")
@@ -350,7 +358,8 @@ namespace Hos.ScheduleMaster.Core.Migrations
 
                     b.Property<string>("UpdateUserName")
                         .HasColumnName("updateusername")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Value")
                         .HasColumnName("value")
@@ -365,46 +374,68 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_SmtpServer",
-                            CreateTime = new DateTime(2020, 4, 5, 15, 38, 14, 582, DateTimeKind.Local).AddTicks(8634),
+                            CreateTime = new DateTime(2020, 4, 11, 17, 17, 21, 363, DateTimeKind.Local).AddTicks(4035),
                             Group = "邮件配置",
                             IsReuired = true,
                             Name = "邮件服务器",
-                            Remark = "seed by efcore auto migration",
+                            Remark = "smtp服务器地址",
                             Sort = 1,
                             Value = ""
                         },
                         new
                         {
                             Key = "Email_SmtpPort",
-                            CreateTime = new DateTime(2020, 4, 5, 15, 38, 14, 583, DateTimeKind.Local).AddTicks(535),
+                            CreateTime = new DateTime(2020, 4, 11, 17, 17, 21, 363, DateTimeKind.Local).AddTicks(5841),
                             Group = "邮件配置",
                             IsReuired = true,
                             Name = "邮件服务器端口",
-                            Remark = "seed by efcore auto migration",
+                            Remark = "smtp端口号",
                             Sort = 2,
                             Value = ""
                         },
                         new
                         {
                             Key = "Email_FromAccount",
-                            CreateTime = new DateTime(2020, 4, 5, 15, 38, 14, 583, DateTimeKind.Local).AddTicks(606),
+                            CreateTime = new DateTime(2020, 4, 11, 17, 17, 21, 363, DateTimeKind.Local).AddTicks(5896),
                             Group = "邮件配置",
                             IsReuired = true,
                             Name = "发件人账号",
-                            Remark = "seed by efcore auto migration",
+                            Remark = "邮箱账号",
                             Sort = 3,
                             Value = ""
                         },
                         new
                         {
                             Key = "Email_FromAccountPwd",
-                            CreateTime = new DateTime(2020, 4, 5, 15, 38, 14, 583, DateTimeKind.Local).AddTicks(608),
+                            CreateTime = new DateTime(2020, 4, 11, 17, 17, 21, 363, DateTimeKind.Local).AddTicks(5899),
                             Group = "邮件配置",
                             IsReuired = true,
                             Name = "发件人账号密码",
-                            Remark = "seed by efcore auto migration",
+                            Remark = "登录密码或授权码等",
                             Sort = 4,
                             Value = ""
+                        },
+                        new
+                        {
+                            Key = "Assembly_ImagePullPolicy",
+                            CreateTime = new DateTime(2020, 4, 11, 17, 17, 21, 363, DateTimeKind.Local).AddTicks(5900),
+                            Group = "程序集配置",
+                            IsReuired = true,
+                            Name = "文件包拉取策略",
+                            Remark = "Always-总是拉取，IfNotPresent-本地没有时拉取",
+                            Sort = 1,
+                            Value = "Always"
+                        },
+                        new
+                        {
+                            Key = "Http_RequestTimeout",
+                            CreateTime = new DateTime(2020, 4, 11, 17, 17, 21, 363, DateTimeKind.Local).AddTicks(5902),
+                            Group = "HTTP配置",
+                            IsReuired = true,
+                            Name = "请求超时时间",
+                            Remark = "单位是秒，默认值是10",
+                            Sort = 1,
+                            Value = "10"
                         });
                 });
 
@@ -430,7 +461,8 @@ namespace Hos.ScheduleMaster.Core.Migrations
 
                     b.Property<string>("Node")
                         .HasColumnName("node")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<Guid?>("ScheduleId")
                         .HasColumnName("scheduleid")
@@ -472,7 +504,8 @@ namespace Hos.ScheduleMaster.Core.Migrations
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnName("password")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Phone")
                         .HasColumnName("phone")
@@ -482,7 +515,8 @@ namespace Hos.ScheduleMaster.Core.Migrations
                     b.Property<string>("RealName")
                         .IsRequired()
                         .HasColumnName("realname")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
 
                     b.Property<int>("Status")
                         .HasColumnName("status")
@@ -491,7 +525,8 @@ namespace Hos.ScheduleMaster.Core.Migrations
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnName("username")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -501,7 +536,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Id = 1,
-                            CreateTime = new DateTime(2020, 4, 5, 15, 38, 14, 577, DateTimeKind.Local).AddTicks(8843),
+                            CreateTime = new DateTime(2020, 4, 11, 17, 17, 21, 358, DateTimeKind.Local).AddTicks(3038),
                             Password = "96e79218965eb72c92a549dd5a330112",
                             RealName = "admin",
                             Status = 1,
