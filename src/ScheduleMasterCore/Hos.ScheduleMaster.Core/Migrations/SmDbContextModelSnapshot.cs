@@ -461,7 +461,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_SmtpServer",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(3346),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(3140),
                             Group = "邮件配置",
                             IsReuired = true,
                             Name = "邮件服务器",
@@ -472,7 +472,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_SmtpPort",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(6246),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(7556),
                             Group = "邮件配置",
                             IsReuired = true,
                             Name = "邮件服务器端口",
@@ -483,7 +483,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_FromAccount",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(6306),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(7631),
                             Group = "邮件配置",
                             IsReuired = true,
                             Name = "发件人账号",
@@ -494,7 +494,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Email_FromAccountPwd",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(6309),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(7634),
                             Group = "邮件配置",
                             IsReuired = true,
                             Name = "发件人账号密码",
@@ -505,7 +505,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Assembly_ImagePullPolicy",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(6310),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(7637),
                             Group = "程序集配置",
                             IsReuired = true,
                             Name = "文件包拉取策略",
@@ -516,7 +516,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "Http_RequestTimeout",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(6312),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(7638),
                             Group = "HTTP配置",
                             IsReuired = true,
                             Name = "请求超时时间",
@@ -527,7 +527,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "System_WorkerUnHealthTimes",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(6314),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(7641),
                             Group = "系统配置",
                             IsReuired = true,
                             Name = "Worker允许无响应次数",
@@ -538,7 +538,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "DelayTask_DelayPattern",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(6315),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(7643),
                             Group = "延时任务配置",
                             IsReuired = true,
                             Name = "延迟模式",
@@ -549,7 +549,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "DelayTask_RetryTimes",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(6317),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(7644),
                             Group = "延时任务配置",
                             IsReuired = true,
                             Name = "回调失败重试次数",
@@ -560,7 +560,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Key = "DelayTask_RetrySpans",
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 64, DateTimeKind.Local).AddTicks(6318),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 616, DateTimeKind.Local).AddTicks(7646),
                             Group = "延时任务配置",
                             IsReuired = true,
                             Name = "回调失败重试间隔",
@@ -667,12 +667,43 @@ namespace Hos.ScheduleMaster.Core.Migrations
                         new
                         {
                             Id = 1,
-                            CreateTime = new DateTime(2020, 5, 15, 10, 44, 1, 57, DateTimeKind.Local).AddTicks(9626),
+                            CreateTime = new DateTime(2020, 6, 22, 11, 50, 44, 608, DateTimeKind.Local).AddTicks(3312),
                             Password = "96e79218965eb72c92a549dd5a330112",
                             RealName = "admin",
                             Status = 1,
                             UserName = "admin"
                         });
+                });
+
+            modelBuilder.Entity("Hos.ScheduleMaster.Core.Models.TraceStatisticsEntity", b =>
+                {
+                    b.Property<int>("DateNum")
+                        .HasColumnName("datenum")
+                        .HasColumnType("int");
+
+                    b.Property<long>("DateStamp")
+                        .HasColumnName("datestamp")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Fail")
+                        .HasColumnName("fail")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("LastUpdateTime")
+                        .HasColumnName("lastupdatetime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Other")
+                        .HasColumnName("other")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Success")
+                        .HasColumnName("success")
+                        .HasColumnType("int");
+
+                    b.HasKey("DateNum");
+
+                    b.ToTable("tracestatistics");
                 });
 #pragma warning restore 612, 618
         }
