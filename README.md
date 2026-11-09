@@ -1,5 +1,4 @@
 
-![schedulemaster](https://i.loli.net/2020/11/23/o34pijrvENnexkl.png)
 
 ScheduleMaster是一个开源的分布式任务调度系统，它基于.NET Core 3.1平台构建，支持跨平台多节点部署运行。
 
